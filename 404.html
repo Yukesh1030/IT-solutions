@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 | STACKLY IT Solutions</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --color-white: #ffffff;
+      --color-black: #000000;
+      --color-dark-bg: #0c101a;
+      --color-blue: #628ad1;
+      --color-light-blue: #d3e7ff;
+      --color-dark-blue: #3d5e86;
+      --color-accent-teal: #00f0ff;
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Outfit', 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      font-family: var(--font-body);
+      color: var(--color-light-blue);
+      background-color: var(--color-dark-bg);
+      background-image: radial-gradient(circle at 50% 50%, #15223f 0%, var(--color-dark-bg) 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* Animated Grid Background */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 1;
+      animation: shiftGrid 20s linear infinite;
+    }
+
+    @keyframes shiftGrid {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 40px; }
+    }
+
+    .error_container {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 32rem;
+      background: rgba(20, 28, 48, 0.6);
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      border-radius: 1.5rem;
+      padding: 3rem 2.5rem;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      text-align: center;
+      animation: floatIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    @keyframes floatIn {
+      0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .error_code {
+      font-family: var(--font-heading);
+      font-size: 7.5rem;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--color-white) 30%, var(--color-accent-teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      letter-spacing: -0.05em;
+      filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.3));
+    }
+
+    .error_title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--color-white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .error_desc {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--color-light-blue);
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+      text-wrap: pretty;
+    }
+
+    .buttons_wrapper {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 3rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .btn-primary {
+      background-color: var(--color-light-blue);
+      color: var(--color-black);
+      border: 1px solid var(--color-light-blue);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      border-color: var(--color-blue);
+      box-shadow: 0 0 15px rgba(98, 138, 209, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-accent-teal);
+      color: var(--color-accent-teal);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    }
+
+    .btn_arrow {
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary:hover .btn_arrow {
+      transform: translateX(4px);
+    }
+
+    .btn-secondary:hover .btn_arrow {
+      transform: translateX(-4px);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  
+  <div class="error_container">
+    <div class="error_code">404</div>
+    <h1 class="error_title">Network Route Not Found</h1>
+    <p class="error_desc">The tech stack or digital assets you are trying to fetch do not exist, or have been migrated to another cluster node.</p>
+    
+    <div class="buttons_wrapper">
+      <button onclick="window.history.back()" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left btn_arrow"></i>
+        <span>Go Back</span>
+      </button>
+      <a href="index.html" class="btn btn-primary">
+        <span>Back to Home</span>
+        <i class="fa-solid fa-arrow-right btn_arrow"></i>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
