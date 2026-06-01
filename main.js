@@ -97,38 +97,38 @@ function initGSAPAnimations() {
   
   gsap.registerPlugin(ScrollTrigger);
   
-  // Reveal Hero Text
-  const heroLines = document.querySelectorAll(".hero-reveal-line span");
-  if (heroLines.length === 0) {
-    // If not wrapped in span, do it dynamically
-    const revealWrappers = document.querySelectorAll(".hero-reveal-line");
-    revealWrappers.forEach(wrap => {
-      const text = wrap.textContent.trim();
-      wrap.innerHTML = `<span>${text}</span>`;
-    });
-  }
+  // Reveal Hero Text with Letter-by-Letter Split Animation
+  const revealLines = document.querySelectorAll(".hero-reveal-line");
+  revealLines.forEach(line => {
+    const text = line.textContent.trim();
+    line.innerHTML = text.split("").map(char => {
+      if (char === " ") return `<span class="char" style="display:inline-block;">&nbsp;</span>`;
+      return `<span class="char" style="display:inline-block; transform:translateY(100%); opacity:0;">${char}</span>`;
+    }).join("");
+  });
   
   gsap.timeline()
-    .to(".hero-reveal-line span", {
+    .to(".hero-reveal-line .char", {
       y: 0,
       opacity: 1,
-      duration: 1.5,
-      ease: "power4.out",
-      stagger: 0.15,
+      duration: 1.2,
+      ease: "back.out(1.6)",
+      stagger: 0.04,
       delay: 0.5
     })
     .from(".home-header_content", {
       opacity: 0,
-      y: 30,
-      duration: 1.2,
+      letterSpacing: "0.08em",
+      y: 25,
+      duration: 1.5,
       ease: "power3.out"
-    }, "-=1.0")
+    }, "-=0.8")
     .from(".home-header_content-line", {
       scaleY: 0,
       transformOrigin: "top center",
       duration: 1.5,
       ease: "power3.out"
-    }, "-=1.2");
+    }, "-=1.5");
   
   // Parallax scroll on tech campus image
   const campusImg = document.getElementById("campusImg");
