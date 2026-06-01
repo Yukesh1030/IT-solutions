@@ -234,7 +234,7 @@ img {
 /* Typography */
 .heading-display-1 {
   font-family: var(--font-heading);
-  font-size: 12.5rem;
+  font-size: 10rem; /* Reduced from 12.5rem to prevent vertical overlap and overflow on laptop screens */
   line-height: 0.98; /* Increased slightly to prevent text clipping and overlap bugs */
   font-weight: 200;
   letter-spacing: -0.04em;
@@ -669,22 +669,22 @@ img {
   height: 100vh;
   min-height: 40rem;
   display: flex;
-  align-items: flex-end;
+  align-items: center; /* Center-align the entire content wrapper vertically in the viewport */
 }
 
 .home-header_component {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center; /* Center-align the heading and subtitle vertically */
   height: 100%;
-  padding-top: 10rem;
-  padding-bottom: 6rem;
+  padding-top: 11.5rem; /* Shifted down to clear navbar and sit lower in the hero section */
+  padding-bottom: 3.5rem;
   position: relative;
 }
 
 .home-header_bottom-content {
   z-index: 3;
-  margin-top: auto;
+  margin-top: 3.5rem; /* Clean separation between the display heading and subtitle */
 }
 
 .home-header_content {
@@ -1926,6 +1926,11 @@ img {
 }
 
 @media screen and (max-width: 991px) {
+  .home-header_component {
+    padding-top: 9rem;
+    padding-bottom: 3.5rem;
+  }
+
   .section_footer {
     padding-top: 6rem;
     padding-bottom: 3rem;
@@ -1955,6 +1960,11 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  .home-header_component {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+  }
+
   .footer_grid h2 {
     text-align: center;
   }
