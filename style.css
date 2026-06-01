@@ -1990,7 +1990,7 @@ img {
 .hero-reveal-line {
   display: flex;
   overflow: hidden;
-  padding-bottom: 0.2em; /* Fixes text descender clipping for letters like 'g' and 'y' */
+  padding-bottom: 0.1em; /* Fixes text descender clipping for letters like 'g' and 'y' */
   margin-bottom: -0.08em;
 }
 
