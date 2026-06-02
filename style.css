@@ -238,6 +238,17 @@ img {
   line-height: 0.98; /* Increased slightly to prevent text clipping and overlap bugs */
   font-weight: 200;
   letter-spacing: -0.04em;
+  animation: heroFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 .heading-style-h3 {
