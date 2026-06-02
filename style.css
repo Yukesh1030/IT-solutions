@@ -822,12 +822,32 @@ img {
     grid-column: span 12;
   }
   
+  .home-about_video-wrapper {
+    margin-left: var(--global-padding);
+    margin-right: var(--global-padding);
+    width: auto;
+    margin-top: 4rem;
+  }
+  
   .home-about_video-wrap {
     height: 50vh;
   }
   
   .video_detail_grid .home-about_video-detail-block {
     grid-column: span 12 !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-about_video-wrapper {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-top: 3rem;
+  }
+  
+  .home-about_video-detail-wrapper {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 
